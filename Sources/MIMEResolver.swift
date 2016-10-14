@@ -6,6 +6,6 @@
 //  Copyright © 2016 Inloop, s.r.o. All rights reserved.
 //
 
-public struct MIMEResolver {
-
+public final class MIMEResolver {
+    public static let `default` = MIMEResolver()
 }
