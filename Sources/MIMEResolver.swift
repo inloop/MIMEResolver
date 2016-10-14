@@ -8,6 +8,7 @@
 
 public final class MIMEResolver {
     private var registeredTypes = [String: MIME]()
+    private var maxSignatureBytesCount = 0
 
     public static let `default` = MIMEResolver()
 
@@ -18,7 +19,6 @@ public final class MIMEResolver {
     public func unregister(mimeType: MIME) {
         registeredTypes.removeValue(forKey: mimeType.contentType)
     }
-
     
     public func resolve(data: Data) -> Never {
         fatalError("Not yet implemented")
