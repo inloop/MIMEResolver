@@ -16,6 +16,7 @@ public final class MIMEResolver {
     }
 
     public func unregister(mimeType: MIME) {
+        registeredTypes.removeValue(forKey: mimeType.contentType)
     }
 
     
