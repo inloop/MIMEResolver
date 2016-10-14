@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B07F4AA1DB16B79003144C8 /* MIMEResolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B07F4A01DB16B79003144C8 /* MIMEResolver.framework */; };
-		3B07F4AF1DB16B79003144C8 /* MIMEResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F4AE1DB16B79003144C8 /* MIMEResolverTests.swift */; };
-		3B07F4B11DB16B79003144C8 /* MIMEResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B07F4A31DB16B79003144C8 /* MIMEResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B07F5391DB19D99003144C8 /* MIMEResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B07F5371DB19D99003144C8 /* MIMEResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B07F53F1DB19E85003144C8 /* MIMEResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +24,11 @@
 
 /* Begin PBXFileReference section */
 		3B07F4A01DB16B79003144C8 /* MIMEResolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MIMEResolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B07F4A31DB16B79003144C8 /* MIMEResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIMEResolver.h; sourceTree = "<group>"; };
-		3B07F4A41DB16B79003144C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B07F4A91DB16B79003144C8 /* MIMEResolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MIMEResolverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B07F4AE1DB16B79003144C8 /* MIMEResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIMEResolverTests.swift; sourceTree = "<group>"; };
-		3B07F4B01DB16B79003144C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B07F5361DB19D99003144C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
+		3B07F5371DB19D99003144C8 /* MIMEResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIMEResolver.h; path = Sources/MIMEResolver.h; sourceTree = "<group>"; };
+		3B07F53B1DB19DAF003144C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
+		3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIMEResolverTests.swift; path = Tests/MIMEResolverTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +53,8 @@
 		3B07F4961DB16B79003144C8 = {
 			isa = PBXGroup;
 			children = (
-				3B07F4A21DB16B79003144C8 /* MIMEResolver */,
-				3B07F4AD1DB16B79003144C8 /* MIMEResolverTests */,
+				3B07F5351DB19D8A003144C8 /* Sources */,
+				3B07F53A1DB19DA0003144C8 /* Tests */,
 				3B07F4A11DB16B79003144C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +68,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3B07F4A21DB16B79003144C8 /* MIMEResolver */ = {
+		3B07F5351DB19D8A003144C8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3B07F4A31DB16B79003144C8 /* MIMEResolver.h */,
-				3B07F4A41DB16B79003144C8 /* Info.plist */,
+				3B07F5361DB19D99003144C8 /* Info.plist */,
+				3B07F5371DB19D99003144C8 /* MIMEResolver.h */,
 			);
-			path = MIMEResolver;
+			name = Sources;
 			sourceTree = "<group>";
 		};
-		3B07F4AD1DB16B79003144C8 /* MIMEResolverTests */ = {
+		3B07F53A1DB19DA0003144C8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3B07F4AE1DB16B79003144C8 /* MIMEResolverTests.swift */,
-				3B07F4B01DB16B79003144C8 /* Info.plist */,
+				3B07F53B1DB19DAF003144C8 /* Info.plist */,
+				3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */,
 			);
-			path = MIMEResolverTests;
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +93,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B07F4B11DB16B79003144C8 /* MIMEResolver.h in Headers */,
+				3B07F5391DB19D99003144C8 /* MIMEResolver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B07F4AF1DB16B79003144C8 /* MIMEResolverTests.swift in Sources */,
+				3B07F53F1DB19E85003144C8 /* MIMEResolverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +338,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MIMEResolver/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.inloop.MIMEResolver;
@@ -359,7 +359,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MIMEResolver/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.inloop.MIMEResolver;
@@ -373,7 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 74JL49Z2D8;
-				INFOPLIST_FILE = MIMEResolverTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks @loader_path/../Frameworks\n@loader_path/../Frameworks @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.inloop.MIMEResolverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,7 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 74JL49Z2D8;
-				INFOPLIST_FILE = MIMEResolverTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks @loader_path/../Frameworks\n@loader_path/../Frameworks @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.inloop.MIMEResolverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
