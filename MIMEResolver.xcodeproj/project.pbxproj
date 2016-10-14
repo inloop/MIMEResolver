@@ -10,6 +10,7 @@
 		3B07F4AA1DB16B79003144C8 /* MIMEResolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B07F4A01DB16B79003144C8 /* MIMEResolver.framework */; };
 		3B07F5391DB19D99003144C8 /* MIMEResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B07F5371DB19D99003144C8 /* MIMEResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B07F53F1DB19E85003144C8 /* MIMEResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */; };
+		3B07F5411DB19F31003144C8 /* MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5401DB19F31003144C8 /* MIME.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		3B07F5371DB19D99003144C8 /* MIMEResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIMEResolver.h; path = Sources/MIMEResolver.h; sourceTree = "<group>"; };
 		3B07F53B1DB19DAF003144C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIMEResolverTests.swift; path = Tests/MIMEResolverTests.swift; sourceTree = "<group>"; };
+		3B07F5401DB19F31003144C8 /* MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIME.swift; path = Sources/MIME.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				3B07F5361DB19D99003144C8 /* Info.plist */,
 				3B07F5371DB19D99003144C8 /* MIMEResolver.h */,
+				3B07F5401DB19F31003144C8 /* MIME.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B07F5411DB19F31003144C8 /* MIME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +376,7 @@
 		3B07F4B81DB16B79003144C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 74JL49Z2D8;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks @loader_path/../Frameworks\n@loader_path/../Frameworks @executable_path/../Frameworks";
@@ -384,6 +389,7 @@
 		3B07F4B91DB16B79003144C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 74JL49Z2D8;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks @loader_path/../Frameworks\n@loader_path/../Frameworks @executable_path/../Frameworks";
