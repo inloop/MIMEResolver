@@ -6,7 +6,7 @@
 //  Copyright © 2016 Inloop, s.r.o. All rights reserved.
 //
 
-protocol MIME {
+public protocol MIME {
     var signature: [UInt8] { get }
     var contentType: String { get }
 }
