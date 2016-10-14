@@ -10,4 +10,8 @@ public final class MIMEResolver {
     private var registeredTypes = [String: MIME]()
 
     public static let `default` = MIMEResolver()
+
+    public func register(mimeType: MIME) {
+        registeredTypes[mimeType.contentType] = mimeType
+    }
 }
