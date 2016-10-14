@@ -7,7 +7,7 @@
 //
 
 public final class MIMEResolver {
-    private var registeredTypes = [String: MIME.Type]()
+    private var registeredTypes = [String: MIME]()
 
     public static let `default` = MIMEResolver()
 }
