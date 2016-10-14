@@ -11,6 +11,7 @@
 		3B07F5391DB19D99003144C8 /* MIMEResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B07F5371DB19D99003144C8 /* MIMEResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B07F53F1DB19E85003144C8 /* MIMEResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */; };
 		3B07F5411DB19F31003144C8 /* MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5401DB19F31003144C8 /* MIME.swift */; };
+		3B07F5431DB19FC2003144C8 /* MIMEResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		3B07F53B1DB19DAF003144C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIMEResolverTests.swift; path = Tests/MIMEResolverTests.swift; sourceTree = "<group>"; };
 		3B07F5401DB19F31003144C8 /* MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIME.swift; path = Sources/MIME.swift; sourceTree = "<group>"; };
+		3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIMEResolver.swift; path = Sources/MIMEResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				3B07F5361DB19D99003144C8 /* Info.plist */,
 				3B07F5371DB19D99003144C8 /* MIMEResolver.h */,
 				3B07F5401DB19F31003144C8 /* MIME.swift */,
+				3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B07F5411DB19F31003144C8 /* MIME.swift in Sources */,
+				3B07F5431DB19FC2003144C8 /* MIMEResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
