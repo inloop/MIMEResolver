@@ -14,4 +14,12 @@ public final class MIMEResolver {
     public func register(mimeType: MIME) {
         registeredTypes[mimeType.contentType] = mimeType
     }
+
+    public func unregister(mimeType: MIME) {
+    }
+
+    
+    public func resolve(data: Data) -> Never {
+        fatalError("Not yet implemented")
+    }
 }
