@@ -9,4 +9,5 @@
 public protocol MIME {
     static var signature: [UInt8] { get }
     static var contentType: String { get }
+    static var validExtensions: [String] { get }
 }

@@ -12,11 +12,13 @@ import XCTest
 enum Inloop: MIME {
     static let signature: [UInt8] = [0x49, 0x4e, 0x4c, 0x4f, 0x4f, 0x50]
     static let contentType = "test/inloop"
+    static let validExtensions: [String] = []
 }
 
 enum LoopLoop: MIME {
     static let signature: [UInt8] = [0x4c, 0x4f, 0x4f, 0x50, 0x4c, 0x4f, 0x4f, 0x50]
     static let contentType = "test/loop"
+    static let validExtensions: [String] = []
 }
 
 
