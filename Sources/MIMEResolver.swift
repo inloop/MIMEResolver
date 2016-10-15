@@ -7,7 +7,7 @@
 //
 
 public final class MIMEResolver {
-    internal private(set) var registeredTypes = [String: MIME]()
+    internal private(set) var registeredTypes = [String: MIME.Type]()
     internal private(set) var maxSignatureBytesCount = 0
 
     private func updateMaxSignatureBytesCount() {
@@ -16,23 +16,23 @@ public final class MIMEResolver {
         }
     }
 
-    public func register(mimeType: MIME) {
+    public func register(mimeType: MIME.Type) {
         guard case .none = registeredTypes[mimeType.contentType] else { return }
         registeredTypes[mimeType.contentType] = mimeType
         updateMaxSignatureBytesCount()
     }
 
-    public func unregister(mimeType: MIME) {
+    public func unregister(mimeType: MIME.Type) {
         if let _ = registeredTypes.removeValue(forKey: mimeType.contentType) {
             updateMaxSignatureBytesCount()
         }
     }
     
-    public func resolve(data: Data) -> MIME? {
+    public func resolve(data: Data) -> MIME.Type? {
         var bytes = [UInt8](repeating: 0, count: maxSignatureBytesCount)
         data.copyBytes(to: &bytes, count: maxSignatureBytesCount)
 
-        var mime: MIME?
+        var mime: MIME.Type?
         for mimeType in registeredTypes.values {
             let currentSignature = Array(bytes.prefix(mimeType.signature.count))
             if mimeType.signature == currentSignature {

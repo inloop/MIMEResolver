@@ -7,6 +7,6 @@
 //
 
 public protocol MIME {
-    var signature: [UInt8] { get }
-    var contentType: String { get }
+    static var signature: [UInt8] { get }
+    static var contentType: String { get }
 }

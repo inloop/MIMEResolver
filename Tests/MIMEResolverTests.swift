@@ -9,16 +9,16 @@
 import XCTest
 @testable import MIMEResolver
 
-class MockMIME: MIME {
-    var signature: [UInt8]
-    var contentType: String
-
-    init(signature: [UInt8] = [0x49, 0x4e, 0x4c, 0x4f, 0x4f, 0x50],
-         contentType: String = "test/mock") {
-        self.signature = signature
-        self.contentType = contentType
-    }
+enum Inloop: MIME {
+    static let signature: [UInt8] = [0x49, 0x4e, 0x4c, 0x4f, 0x4f, 0x50]
+    static let contentType = "test/inloop"
 }
+
+enum LoopLoop: MIME {
+    static let signature: [UInt8] = [0x4c, 0x4f, 0x4f, 0x50, 0x4c, 0x4f, 0x4f, 0x50]
+    static let contentType = "test/loop"
+}
+
 
 class MIMEResolverTests: XCTestCase {
 
@@ -28,90 +28,85 @@ class MIMEResolverTests: XCTestCase {
     }
 
     func testRegister() {
-        let mock = MockMIME()
         let resolver = MIMEResolver()
-        resolver.register(mimeType: mock)
+        resolver.register(mimeType: Inloop.self)
         XCTAssertEqual(resolver.registeredTypes.count, 1)
     }
 
     func testRegisterOnlyOnce() {
-        let mock = MockMIME()
         let resolver = MIMEResolver()
-        resolver.register(mimeType: mock)
-        resolver.register(mimeType: mock)
+        resolver.register(mimeType: Inloop.self)
+        resolver.register(mimeType: Inloop.self)
         XCTAssertEqual(resolver.registeredTypes.count, 1)
     }
 
     func testUnregister() {
-        let mock = MockMIME()
         let resolver = MIMEResolver()
-        resolver.register(mimeType: mock)
-        resolver.unregister(mimeType: mock)
+        resolver.register(mimeType: Inloop.self)
+        resolver.unregister(mimeType: Inloop.self)
         XCTAssertEqual(resolver.registeredTypes.count, 0)
     }
 
     func testMaxSignatureLength() {
-        let mock = MockMIME()
         let resolver = MIMEResolver()
         XCTAssertEqual(resolver.maxSignatureBytesCount, 0)
-        resolver.register(mimeType: mock)
-        XCTAssertEqual(resolver.maxSignatureBytesCount, mock.signature.count)
-        let mock1 = MockMIME(signature: [UInt8](repeating: 0, count: 30), contentType: "test/mock1")
-        resolver.register(mimeType: mock1)
-        XCTAssertEqual(resolver.maxSignatureBytesCount, mock1.signature.count)
-        resolver.unregister(mimeType: mock1)
-        XCTAssertEqual(resolver.maxSignatureBytesCount, mock.signature.count)
+        resolver.register(mimeType: Inloop.self)
+        XCTAssertEqual(resolver.maxSignatureBytesCount, Inloop.signature.count)
+        resolver.register(mimeType: LoopLoop.self)
+        XCTAssertEqual(resolver.maxSignatureBytesCount, LoopLoop.signature.count)
+        resolver.unregister(mimeType: LoopLoop.self)
+        XCTAssertEqual(resolver.maxSignatureBytesCount, Inloop.signature.count)
     }
 
     func testResolveNotNil() {
-        let mock = MockMIME()
-        let data = Data(bytes: mock.signature)
+        let data = Data(bytes: Inloop.signature)
         let resolver = MIMEResolver()
-        resolver.register(mimeType: mock)
+        resolver.register(mimeType: Inloop.self)
         let resolved = resolver.resolve(data: data)
         XCTAssertNotNil(resolved)
     }
 
     func testResolveResolvesCorrectMIMEType() {
-        let mock = MockMIME()
-        let data = Data(bytes: mock.signature)
+        let data = Data(bytes: Inloop.signature)
         let resolver = MIMEResolver()
-        resolver.register(mimeType: mock)
+        resolver.register(mimeType: Inloop.self)
         let resolved = resolver.resolve(data: data)!
-        XCTAssertEqual(resolved.contentType, mock.contentType)
-        XCTAssertEqual(resolved.signature, mock.signature)
+        XCTAssertEqual(resolved.contentType, Inloop.contentType)
+        XCTAssertEqual(resolved.signature, Inloop.signature)
     }
 
     func testResolveReturnsNil() {
-        let mock = MockMIME()
-        let data = Data(bytes: mock.signature.dropFirst())
+        let data = Data(bytes: Inloop.signature.dropFirst())
         let resolver = MIMEResolver()
-        resolver.register(mimeType: mock)
+        resolver.register(mimeType: Inloop.self)
         let resolved = resolver.resolve(data: data)
         XCTAssertNil(resolved)
     }
 
     func testBmp() {
-        let resolver = MIMEResolver.default
+        let resolver = MIMEResolver()
+        resolver.register(mimeType: Bmp.self)
         let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "bmp")!
         let data = try! Data(contentsOf: assetURL)
         let resolved = resolver.resolve(data: data)
-        XCTAssert(resolved is Bmp)
+        XCTAssert(resolved is Bmp.Type)
     }
 
     func testGif() {
-        let resolver = MIMEResolver.default
+        let resolver = MIMEResolver()
+        resolver.register(mimeType: Gif.self)
         let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "gif")!
         let data = try! Data(contentsOf: assetURL)
         let resolved = resolver.resolve(data: data)
-        XCTAssert(resolved is Gif)
+        XCTAssert(resolved is Gif.Type)
     }
 
     func testJpeg() {
-        let resolver = MIMEResolver.default
+        let resolver = MIMEResolver()
+        resolver.register(mimeType: Jpeg.self)
         let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "jpg")!
         let data = try! Data(contentsOf: assetURL)
         let resolved = resolver.resolve(data: data)
-        XCTAssert(resolved is Jpeg)
+        XCTAssert(resolved is Jpeg.Type)
     }
 }
