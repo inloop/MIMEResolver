@@ -13,8 +13,8 @@
 		3B07F5411DB19F31003144C8 /* MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5401DB19F31003144C8 /* MIME.swift */; };
 		3B07F5431DB19FC2003144C8 /* MIMEResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */; };
 		3B07F5461DB1B10F003144C8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5451DB1B10F003144C8 /* Image.swift */; };
-		3B07F5491DB2106D003144C8 /* lena_gray.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F5481DB2106D003144C8 /* lena_gray.bmp */; };
 		3B07F54B1DB21AF5003144C8 /* yao_ming.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F54A1DB21AF5003144C8 /* yao_ming.gif */; };
+		3B07F54F1DB22629003144C8 /* test.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F54C1DB22629003144C8 /* test.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,8 @@
 		3B07F5401DB19F31003144C8 /* MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIME.swift; path = Sources/MIME.swift; sourceTree = "<group>"; };
 		3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIMEResolver.swift; path = Sources/MIMEResolver.swift; sourceTree = "<group>"; };
 		3B07F5451DB1B10F003144C8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
-		3B07F5481DB2106D003144C8 /* lena_gray.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = lena_gray.bmp; path = Tests/Assets/lena_gray.bmp; sourceTree = "<group>"; };
 		3B07F54A1DB21AF5003144C8 /* yao_ming.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = yao_ming.gif; path = Tests/Assets/yao_ming.gif; sourceTree = "<group>"; };
+		3B07F54C1DB22629003144C8 /* test.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = test.bmp; path = Tests/Assets/test.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				3B07F54A1DB21AF5003144C8 /* yao_ming.gif */,
-				3B07F5481DB2106D003144C8 /* lena_gray.bmp */,
+				3B07F54C1DB22629003144C8 /* test.bmp */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B07F5491DB2106D003144C8 /* lena_gray.bmp in Resources */,
 				3B07F54B1DB21AF5003144C8 /* yao_ming.gif in Resources */,
+				3B07F54F1DB22629003144C8 /* test.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
