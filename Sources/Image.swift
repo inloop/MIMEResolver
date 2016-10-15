@@ -15,3 +15,8 @@ public struct Gif: MIME {
     public let signature: [UInt8] = [0x47, 0x49, 0x46]
     public let contentType = "image/gif"
 }
+
+public struct Jpeg: MIME {
+    public let signature: [UInt8] = [0xff, 0xd8, 0xff]
+    public let contentType = "image/jpeg"
+}
