@@ -13,6 +13,7 @@
 		3B07F5411DB19F31003144C8 /* MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5401DB19F31003144C8 /* MIME.swift */; };
 		3B07F5431DB19FC2003144C8 /* MIMEResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */; };
 		3B07F5461DB1B10F003144C8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07F5451DB1B10F003144C8 /* Image.swift */; };
+		3B07F5491DB2106D003144C8 /* lena_gray.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F5481DB2106D003144C8 /* lena_gray.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		3B07F5401DB19F31003144C8 /* MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIME.swift; path = Sources/MIME.swift; sourceTree = "<group>"; };
 		3B07F5421DB19FC2003144C8 /* MIMEResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIMEResolver.swift; path = Sources/MIMEResolver.swift; sourceTree = "<group>"; };
 		3B07F5451DB1B10F003144C8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
+		3B07F5481DB2106D003144C8 /* lena_gray.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = lena_gray.bmp; path = Tests/Assets/lena_gray.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +91,19 @@
 		3B07F53A1DB19DA0003144C8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3B07F5471DB2103C003144C8 /* Assets */,
 				3B07F53B1DB19DAF003144C8 /* Info.plist */,
 				3B07F53C1DB19DAF003144C8 /* MIMEResolverTests.swift */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		3B07F5471DB2103C003144C8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3B07F5481DB2106D003144C8 /* lena_gray.bmp */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B07F5491DB2106D003144C8 /* lena_gray.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
