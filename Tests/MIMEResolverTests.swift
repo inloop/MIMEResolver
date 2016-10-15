@@ -22,6 +22,11 @@ class MockMIME: MIME {
 
 class MIMEResolverTests: XCTestCase {
 
+    func testResolverInitializedEmpty() {
+        let resolver = MIMEResolver()
+        XCTAssertEqual(resolver.registeredTypes.count, 0)
+    }
+
     func testResolveNotNil() {
         let mock = MockMIME()
         let data = Data(bytes: mock.signature)
