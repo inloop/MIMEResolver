@@ -11,31 +11,29 @@ import XCTest
 
 class ImageTests: XCTestCase {
     
-    func resolveImage(extension ext: String, type: MIME.Type) -> MIME.Type? {
+    func resolveImage(type: MIME.Type) {
         let resolver = MIMEResolver()
         resolver.register(mimeType: type)
-        let assetURL = Bundle(for: ImageTests.self).url(forResource: "test", withExtension: ext)!
+        let bundle = Bundle(for: ImageTests.self)
+        let assetURL = type.validExtensions.flatMap { bundle.url(forResource: "test", withExtension: $0) }.first!
         let data = try! Data(contentsOf: assetURL)
-        return resolver.resolve(data: data)
+        let resolved = resolver.resolve(data: data)
+        XCTAssert(resolved == type)
     }
 
     func testBmp() {
-        let resolved = resolveImage(extension: "bmp", type: Bmp.self)
-        XCTAssert(resolved is Bmp.Type)
+        resolveImage(type: Bmp.self)
     }
 
     func testGif() {
-        let resolved = resolveImage(extension: "gif", type: Gif.self)
-        XCTAssert(resolved is Gif.Type)
+        resolveImage(type: Gif.self)
     }
 
     func testJpeg() {
-        let resolved = resolveImage(extension: "jpg", type: Jpeg.self)
-        XCTAssert(resolved is Jpeg.Type)
+        resolveImage(type: Jpeg.self)
     }
 
     func testPng() {
-        let resolved = resolveImage(extension: "png", type: Png.self)
-        XCTAssert(resolved is Png.Type)
+        resolveImage(type: Png.self)
     }
 }
