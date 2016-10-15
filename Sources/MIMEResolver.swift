@@ -21,6 +21,21 @@ public final class MIMEResolver {
     }
     
     public func resolve(data: Data) -> MIME? {
-        return Bmp()
+        maxSignatureBytesCount = registeredTypes.values.reduce(0) {
+            max($0, $1.signature.count)
+        }
+
+        var bytes = [UInt8](repeating: 0, count: maxSignatureBytesCount)
+        data.copyBytes(to: &bytes, count: maxSignatureBytesCount)
+
+        var mime: MIME?
+        for mimeType in registeredTypes.values {
+            if mimeType.signature == bytes {
+                mime = mimeType
+                break
+            }
+        }
+
+        return mime
     }
 }
