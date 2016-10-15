@@ -83,30 +83,26 @@ class MIMEResolverTests: XCTestCase {
         XCTAssertNil(resolved)
     }
 
-    func testBmp() {
+    func resolveImage(extension ext: String, type: MIME.Type) -> MIME.Type? {
         let resolver = MIMEResolver()
-        resolver.register(mimeType: Bmp.self)
-        let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "bmp")!
+        resolver.register(mimeType: type)
+        let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: ext)!
         let data = try! Data(contentsOf: assetURL)
-        let resolved = resolver.resolve(data: data)
+        return resolver.resolve(data: data)
+    }
+
+    func testBmp() {
+        let resolved = resolveImage(extension: "bmp", type: Bmp.self)
         XCTAssert(resolved is Bmp.Type)
     }
 
     func testGif() {
-        let resolver = MIMEResolver()
-        resolver.register(mimeType: Gif.self)
-        let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "gif")!
-        let data = try! Data(contentsOf: assetURL)
-        let resolved = resolver.resolve(data: data)
+        let resolved = resolveImage(extension: "gif", type: Gif.self)
         XCTAssert(resolved is Gif.Type)
     }
 
     func testJpeg() {
-        let resolver = MIMEResolver()
-        resolver.register(mimeType: Jpeg.self)
-        let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "jpg")!
-        let data = try! Data(contentsOf: assetURL)
-        let resolved = resolver.resolve(data: data)
+        let resolved = resolveImage(extension: "jpg", type: Jpeg.self)
         XCTAssert(resolved is Jpeg.Type)
     }
 }
