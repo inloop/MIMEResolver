@@ -16,14 +16,6 @@ public final class MIMEResolver {
         }
     }
 
-    public static let `default`: MIMEResolver = {
-        let instance = MIMEResolver()
-        instance.register(mimeType: Bmp())
-        instance.register(mimeType: Gif())
-        instance.register(mimeType: Jpeg())
-        return instance
-    }()
-
     public func register(mimeType: MIME) {
         guard case .none = registeredTypes[mimeType.contentType] else { return }
         registeredTypes[mimeType.contentType] = mimeType
