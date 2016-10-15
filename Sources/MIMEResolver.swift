@@ -20,7 +20,7 @@ public final class MIMEResolver {
         registeredTypes.removeValue(forKey: mimeType.contentType)
     }
     
-    public func resolve(data: Data) -> Never {
-        fatalError("Not yet implemented")
+    public func resolve(data: Data) -> MIME? {
+        return nil
     }
 }
