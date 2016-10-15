@@ -105,4 +105,9 @@ class MIMEResolverTests: XCTestCase {
         let resolved = resolveImage(extension: "jpg", type: Jpeg.self)
         XCTAssert(resolved is Jpeg.Type)
     }
+
+    func testPng() {
+        let resolved = resolveImage(extension: "png", type: Png.self)
+        XCTAssert(resolved is Png.Type)
+    }
 }
