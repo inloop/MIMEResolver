@@ -93,16 +93,16 @@ class MIMEResolverTests: XCTestCase {
 
     func testBmp() {
         let resolver = MIMEResolver.default
-        let bmpURL = Bundle(for: MIMEResolverTests.self).url(forResource: "lena_gray", withExtension: "bmp")!
-        let data = try! Data(contentsOf: bmpURL)
+        let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "bmp")!
+        let data = try! Data(contentsOf: assetURL)
         let resolved = resolver.resolve(data: data)
         XCTAssert(resolved is Bmp)
     }
 
     func testGif() {
         let resolver = MIMEResolver.default
-        let gifURL = Bundle(for: MIMEResolverTests.self).url(forResource: "yao_ming", withExtension: "gif")!
-        let data = try! Data(contentsOf: gifURL)
+        let assetURL = Bundle(for: MIMEResolverTests.self).url(forResource: "test", withExtension: "gif")!
+        let data = try! Data(contentsOf: assetURL)
         let resolved = resolver.resolve(data: data)
         XCTAssert(resolved is Gif)
     }
