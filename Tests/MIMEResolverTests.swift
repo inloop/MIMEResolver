@@ -50,6 +50,19 @@ class MIMEResolverTests: XCTestCase {
         XCTAssertEqual(resolver.registeredTypes.count, 0)
     }
 
+    func testMaxSignatureLength() {
+        let mock = MockMIME()
+        let resolver = MIMEResolver()
+        XCTAssertEqual(resolver.maxSignatureBytesCount, 0)
+        resolver.register(mimeType: mock)
+        XCTAssertEqual(resolver.maxSignatureBytesCount, mock.signature.count)
+        let mock1 = MockMIME(signature: [UInt8](repeating: 0, count: 30), contentType: "test/mock1")
+        resolver.register(mimeType: mock1)
+        XCTAssertEqual(resolver.maxSignatureBytesCount, mock1.signature.count)
+        resolver.unregister(mimeType: mock1)
+        XCTAssertEqual(resolver.maxSignatureBytesCount, mock.signature.count)
+    }
+
     func testResolveNotNil() {
         let mock = MockMIME()
         let data = Data(bytes: mock.signature)
