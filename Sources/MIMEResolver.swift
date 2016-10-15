@@ -10,12 +10,17 @@ public final class MIMEResolver {
     internal private(set) var registeredTypes = [String: MIME]()
     internal private(set) var maxSignatureBytesCount = 0
 
-    public static let `default` = MIMEResolver()
     private func updateMaxSignatureBytesCount() {
         maxSignatureBytesCount = registeredTypes.values.reduce(0) {
             max($0, $1.signature.count)
         }
     }
+
+    public static let `default`: MIMEResolver = {
+        let instance = MIMEResolver()
+        instance.register(mimeType: Bmp())
+        return instance
+    }()
 
     public func register(mimeType: MIME) {
         guard case .none = registeredTypes[mimeType.contentType] else { return }
