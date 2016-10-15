@@ -78,7 +78,6 @@ class MIMEResolverTests: XCTestCase {
         let resolver = MIMEResolver()
         resolver.register(mimeType: mock)
         let resolved = resolver.resolve(data: data)!
-        
         XCTAssertEqual(resolved.contentType, mock.contentType)
         XCTAssertEqual(resolved.signature, mock.signature)
     }
@@ -90,5 +89,13 @@ class MIMEResolverTests: XCTestCase {
         resolver.register(mimeType: mock)
         let resolved = resolver.resolve(data: data)
         XCTAssertNil(resolved)
+    }
+
+    func testBmp() {
+        let resolver = MIMEResolver.default
+        let bmpURL = Bundle(for: MIMEResolverTests.self).url(forResource: "lena_gray", withExtension: "bmp")!
+        let data = try! Data(contentsOf: bmpURL)
+        let resolved = resolver.resolve(data: data)
+        XCTAssert(resolved is Bmp)
     }
 }
