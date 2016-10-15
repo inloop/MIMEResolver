@@ -21,6 +21,6 @@ public final class MIMEResolver {
     }
     
     public func resolve(data: Data) -> MIME? {
-        return nil
+        return Bmp()
     }
 }

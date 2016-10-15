@@ -15,7 +15,7 @@ struct MockMIME: MIME {
 }
 
 class MIMEResolverTests: XCTestCase {
-    
+
     func testResolveNotNil() {
         let mock = MockMIME()
         let data = Data(bytes: mock.signature)
@@ -23,5 +23,16 @@ class MIMEResolverTests: XCTestCase {
         resolver.register(mimeType: mock)
         let resolved = resolver.resolve(data: data)
         XCTAssertNotNil(resolved)
+    }
+
+    func testResolveResolvesCorrectMIMEType() {
+        let mock = MockMIME()
+        let data = Data(bytes: mock.signature)
+        let resolver = MIMEResolver()
+        resolver.register(mimeType: mock)
+        let resolved = resolver.resolve(data: data)!
+        
+        XCTAssertEqual(resolved.contentType, mock.contentType)
+        XCTAssertEqual(resolved.signature, mock.signature)
     }
 }
