@@ -9,9 +9,15 @@
 import XCTest
 @testable import MIMEResolver
 
-struct MockMIME: MIME {
-    let signature: [UInt8] = [0x49, 0x4e, 0x4c, 0x4f, 0x4f, 0x50]
-    let contentType: String = "test/mock"
+class MockMIME: MIME {
+    var signature: [UInt8]
+    var contentType: String
+
+    init(signature: [UInt8] = [0x49, 0x4e, 0x4c, 0x4f, 0x4f, 0x50],
+         contentType: String = "test/mock") {
+        self.signature = signature
+        self.contentType = contentType
+    }
 }
 
 class MIMEResolverTests: XCTestCase {
