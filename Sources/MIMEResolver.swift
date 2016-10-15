@@ -19,6 +19,7 @@ public final class MIMEResolver {
     public static let `default`: MIMEResolver = {
         let instance = MIMEResolver()
         instance.register(mimeType: Bmp())
+        instance.register(mimeType: Gif())
         return instance
     }()
 
