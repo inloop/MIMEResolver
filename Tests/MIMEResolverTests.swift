@@ -82,4 +82,13 @@ class MIMEResolverTests: XCTestCase {
         XCTAssertEqual(resolved.contentType, mock.contentType)
         XCTAssertEqual(resolved.signature, mock.signature)
     }
+
+    func testResolveReturnsNil() {
+        let mock = MockMIME()
+        let data = Data(bytes: mock.signature.dropFirst())
+        let resolver = MIMEResolver()
+        resolver.register(mimeType: mock)
+        let resolved = resolver.resolve(data: data)
+        XCTAssertNil(resolved)
+    }
 }
