@@ -10,6 +10,8 @@ public final class MIMEResolver {
     internal private(set) var registeredTypes = [String: MIME.Type]()
     internal private(set) var maxSignatureBytesCount = 0
 
+    public init() {}
+
     private func updateMaxSignatureBytesCount() {
         maxSignatureBytesCount = registeredTypes.values.reduce(0) {
             max($0, $1.signature.count)
