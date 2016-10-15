@@ -27,6 +27,13 @@ class MIMEResolverTests: XCTestCase {
         XCTAssertEqual(resolver.registeredTypes.count, 0)
     }
 
+    func testRegister() {
+        let mock = MockMIME()
+        let resolver = MIMEResolver()
+        resolver.register(mimeType: mock)
+        XCTAssertEqual(resolver.registeredTypes.count, 1)
+    }
+
     func testResolveNotNil() {
         let mock = MockMIME()
         let data = Data(bytes: mock.signature)
