@@ -7,8 +7,8 @@
 //
 
 public final class MIMEResolver {
-    private var registeredTypes = [String: MIME]()
-    private var maxSignatureBytesCount = 0
+    internal private(set) var registeredTypes = [String: MIME]()
+    internal private(set) var maxSignatureBytesCount = 0
 
     public static let `default` = MIMEResolver()
 
