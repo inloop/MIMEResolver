@@ -41,7 +41,8 @@ public final class MIMEResolver {
 
         var mime: MIME?
         for mimeType in registeredTypes.values {
-            if mimeType.signature == bytes {
+            let currentSignature = Array(bytes.prefix(mimeType.signature.count))
+            if mimeType.signature == currentSignature {
                 mime = mimeType
                 break
             }
