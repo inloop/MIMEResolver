@@ -1,4 +1,4 @@
-# MIMEResolver
+# MIMEResolver [![Build Status](https://travis-ci.org/inloop/MIMEResolver.svg?branch=master)](https://travis-ci.org/inloop/MIMEResolver)
 µ framework for resolving MIME type from Data objects.
 
 * [Usage](#usage)
