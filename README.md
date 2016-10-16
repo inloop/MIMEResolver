@@ -1,4 +1,6 @@
-# MIMEResolver [![Build Status](https://travis-ci.org/inloop/MIMEResolver.svg?branch=master)](https://travis-ci.org/inloop/MIMEResolver) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# MIMEResolver 
+[![Build Status](https://travis-ci.org/inloop/MIMEResolver.svg?branch=master)](https://travis-ci.org/inloop/MIMEResolver) [![CocoaPods](https://img.shields.io/cocoapods/v/MIMEResolver.svg)]() [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Platforms](https://img.shields.io/cocoapods/p/MIMEResolver.svg?style=flat)]() [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/inloop/MIMEResolver/master/LICENSE)
+
 µ framework for resolving MIME type from Data objects.
 
 * [Usage](#usage)
@@ -48,7 +50,7 @@ if mime is Gif.Type {
 - Swift 3
 
 ## Installation
-### Using [Carthage](https://github.com/Carthage/Carthage)
+### [Carthage](https://github.com/Carthage/Carthage)
 Specify `MIMEResolver` repo in your `Cartfile`:
 
 ```ogdl
@@ -56,6 +58,11 @@ github "inloop/MIMEResolver"
 ```
 Run `carthage update --platform [your platform of choice]` 
 
+### [Cocoapods](https://cocoapods.org)
+Add the following line to your target's dependencies in Podfile:
+```ogdl
+pod 'MIMEResolver'
+```
 
 ## Support
 
