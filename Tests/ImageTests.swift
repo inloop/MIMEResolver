@@ -17,7 +17,7 @@ class ImageTests: XCTestCase {
         let bundle = Bundle(for: ImageTests.self)
         let assetURL = type.validExtensions.flatMap { bundle.url(forResource: "test", withExtension: $0) }.first!
         let data = try! Data(contentsOf: assetURL)
-        let resolved = resolver.resolve(data: data)
+        let resolved = resolver.resolve(data)
         XCTAssert(resolved == type)
     }
 

@@ -64,7 +64,7 @@ class MIMEResolverTests: XCTestCase {
         let data = Data(bytes: Inloop.signature)
         let resolver = MIMEResolver()
         resolver.register(mimeType: Inloop.self)
-        let resolved = resolver.resolve(data: data)
+        let resolved = resolver.resolve(data)
         XCTAssertNotNil(resolved)
     }
 
@@ -72,7 +72,7 @@ class MIMEResolverTests: XCTestCase {
         let data = Data(bytes: Inloop.signature)
         let resolver = MIMEResolver()
         resolver.register(mimeType: Inloop.self)
-        let resolved = resolver.resolve(data: data)!
+        let resolved = resolver.resolve(data)!
         XCTAssertEqual(resolved.contentType, Inloop.contentType)
         XCTAssertEqual(resolved.signature, Inloop.signature)
     }
@@ -81,7 +81,7 @@ class MIMEResolverTests: XCTestCase {
         let data = Data(bytes: Inloop.signature.dropFirst())
         let resolver = MIMEResolver()
         resolver.register(mimeType: Inloop.self)
-        let resolved = resolver.resolve(data: data)
+        let resolved = resolver.resolve(data)
         XCTAssertNil(resolved)
     }
 }

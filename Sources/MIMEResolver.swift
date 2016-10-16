@@ -30,7 +30,7 @@ public final class MIMEResolver {
         }
     }
     
-    public func resolve(data: Data) -> MIME.Type? {
+    public func resolve(_ data: Data) -> MIME.Type? {
         var bytes = [UInt8](repeating: 0, count: maxSignatureBytesCount)
         data.copyBytes(to: &bytes, count: maxSignatureBytesCount)
 
