@@ -35,6 +35,7 @@ public final class MIMEResolver {
         data.copyBytes(to: &bytes, count: maxSignatureBytesCount)
 
         var mime: MIME.Type?
+
         for mimeType in registeredTypes.values {
             let currentSignature = Array(bytes.prefix(mimeType.signature.count))
             if mimeType.signature == currentSignature {
