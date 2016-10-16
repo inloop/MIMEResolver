@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 s.name = 'MIMEResolver'
 s.version = '0.0.1'
 s.license = 'MIT'
-s.summary = 'Micro framework for resolving MIME from Data objects.'
+s.summary = 'µ framework for resolving MIME type from Data objects'
 s.homepage = 'https://github.com/inloop/MIMEResolver'
 s.authors = { 'Jakub Petrik' => 'petrik@inloop.eu' }
 s.source = { :git => 'https://github.com/inloop/MIMEResolver.git', :tag => s.version }
