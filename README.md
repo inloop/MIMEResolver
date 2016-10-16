@@ -1,4 +1,4 @@
-# MIMEResolver
+# MIMEResolver [![Build Status](https://travis-ci.org/inloop/MIMEResolver.svg?branch=master)](https://travis-ci.org/inloop/MIMEResolver) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 µ framework for resolving MIME type from Data objects.
 
 * [Usage](#usage)
