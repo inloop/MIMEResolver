@@ -47,6 +47,7 @@
 		3B07F5521DB22E57003144C8 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = Tests/Assets/test.png; sourceTree = "<group>"; };
 		3B07F5541DB230EF003144C8 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTests.swift; path = Tests/ImageTests.swift; sourceTree = "<group>"; };
 		3B10DF111DBE98FF00E55FA5 /* test.iff */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.iff; path = Tests/Assets/test.iff; sourceTree = "<group>"; };
+		3B10DF131DBE9A8700E55FA5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 		3B07F4961DB16B79003144C8 = {
 			isa = PBXGroup;
 			children = (
+				3B10DF131DBE9A8700E55FA5 /* README.md */,
 				3B07F5351DB19D8A003144C8 /* Sources */,
 				3B07F53A1DB19DA0003144C8 /* Tests */,
 				3B07F4A11DB16B79003144C8 /* Products */,
