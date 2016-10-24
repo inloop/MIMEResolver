@@ -43,6 +43,7 @@ if mime is Gif.Type {
 - [x] `image/gif`
 - [x] `image/jpeg`
 - [x] `image/png`
+- [x] `image/iff`
 
 ## Requirements
 - iOS | watchOS | tvOS | macOS
