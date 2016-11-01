@@ -44,6 +44,7 @@ if mime is Gif.Type {
 - [x] `image/jpeg`
 - [x] `image/png`
 - [x] `image/iff`
+- [x] `image/vnd.microsoft.icon`
 
 ## Requirements
 - iOS | watchOS | tvOS | macOS

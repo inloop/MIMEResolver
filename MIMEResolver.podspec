@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'MIMEResolver'
-s.version = '0.0.2'
+s.version = '0.0.3'
 s.license = 'MIT'
 s.summary = 'µ framework for resolving MIME type from Data objects'
 s.homepage = 'https://github.com/inloop/MIMEResolver'
