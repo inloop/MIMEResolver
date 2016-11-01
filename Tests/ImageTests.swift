@@ -36,4 +36,8 @@ class ImageTests: XCTestCase {
     func testPng() {
         resolveImage(type: Png.self)
     }
+
+    func testIff() {
+        resolveImage(type: Iff.self)
+    }
 }

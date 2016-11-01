@@ -8,4 +8,4 @@ env:
   - ACTION=test  PLATFORM=tvOS    DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 script:
-  - set -o pipefail && xcodebuild -scheme MIMEResolver -destination "$DESTINATION" clean $ACTION | xcpretty
+  - sleep 10 && set -o pipefail && xcodebuild -scheme MIMEResolver -destination "$DESTINATION" clean $ACTION | xcpretty

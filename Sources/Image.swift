@@ -29,3 +29,9 @@ public enum Png: MIME {
     public static let contentType = "image/png"
     public static let validExtensions = ["png"]
 }
+
+public enum Iff: MIME {
+    public static let signature: [UInt8] = [0x46, 0x4f, 0x52, 0x4d]
+    public static let contentType = "image/iff"
+    public static let validExtensions = ["iff"]
+}
