@@ -35,3 +35,9 @@ public enum Iff: MIME {
     public static let contentType = "image/iff"
     public static let validExtensions = ["iff"]
 }
+
+public enum Ico: MIME {
+    public static let signature: [UInt8] = [0x00, 0x00, 0x01, 0x00]
+    public static let contentType = "image/vnd.microsoft.icon"
+    public static let validExtensions = ["ico"]
+}

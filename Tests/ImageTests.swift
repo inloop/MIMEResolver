@@ -40,4 +40,8 @@ class ImageTests: XCTestCase {
     func testIff() {
         resolveImage(type: Iff.self)
     }
+
+    func testIco() {
+        resolveImage(type: Ico.self)
+    }
 }
