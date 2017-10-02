@@ -48,8 +48,8 @@ if mime is Gif.Type {
 
 ## Requirements
 - iOS | watchOS | tvOS | macOS
-- Xcode 8+
-- Swift 3
+- Xcode 9+
+- Swift 4
 
 ## Installation
 ### [Carthage](https://github.com/Carthage/Carthage)
